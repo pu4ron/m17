@@ -7,4 +7,4 @@ Script de instalação do módulo cross-over DMR2M17 / PI-STAR.
 * cd m17
 * sudo chmod +x install.sh
 * sudo chmod 777 install.sh
-* sudo install.sh
+* sudo ./install.sh
