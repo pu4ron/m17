@@ -1,0 +1,121 @@
+#!/bin/bash
+#
+################################################
+#                                              #
+#        Por: Ronualdo JSA - PU4RON            #
+#                                              #
+#                Janauba/MG                    #
+#                                              #
+################################################
+#
+valorATUAL=$(grep -m 1 'GainAdjustdB=' /etc/dmr2m17 | awk -F "=" '/GainAdjustdB/ {print $2}')
+
+sudo mount -o remount,rw /
+
+up_servico() {
+	
+	doWhat=${1}
+	sudo systemctl ${doWhat} dmr2m17.service > /dev/null 2>&1
+	# sudo systemctl ${doWhat} dmrgateway.service > /dev/null 2>&1
+}
+
+if [ -z "$1" ]; then
+   script=$(nome "$0")
+   exit 0
+ fi
+
+if [ "$1" ]; then
+   case ${1} in
+
+
+([+][1][8] | [1][8])
+    echo "M17 Ganho (maximo) +18 dB"
+    sudo sed -i "/\[M17 Network\]/{n;n;n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=18/}" /etc/dmr2m17
+    up_servico restart
+    ;;
+
+
+([+][1][5] | [1][5])
+    echo "Ganho +15 dB"
+    sudo sed -i "/\[M17 Network\]/{n;n;n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=15/}" /etc/dmr2m17
+    up_servico restart
+    ;;
+
+
+([+][1][2] | [1][2])
+    echo "Ganho +12 dB"
+    sudo sed -i "/\[M17 Network\]/{n;n;n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=12/}" /etc/dmr2m17
+    up_servico restart
+    ;;
+
+
+([+][9] | [9])
+    echo "Ganho +9 dB"
+    sudo sed -i "/\[M17 Network\]/{n;n;n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=9/}" /etc/dmr2m17
+    up_servico restart
+    ;;
+
+
+([+][6] | [6])
+    echo "Ganho +6 dB"
+    sudo sed -i "/\[M17 Network\]/{n;n;n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=6/}" /etc/dmr2m17
+    up_servico restart
+    ;;
+
+
+([+][3] | [3])
+    echo "Ganho +3 dB"
+    sudo sed -i "/\[M17 Network\]/{n;n;n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=3/}" /etc/dmr2m17
+    up_servico restart
+    ;;
+
+
+([0])
+    echo "Ganho 0 dB"
+    sudo sed -i "/\[M17 Network\]/{n;n;n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=0/}" /etc/dmr2m17
+    up_servico restart
+    ;;
+
+([-][3])
+    echo "Ganho -3 dB"
+    sudo sed -i "/\[M17 Network\]/{n;n;n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=-3/}" /etc/dmr2m17
+    up_servico restart
+    ;;
+
+([-][6])
+    echo "Ganho -6 dB"
+    sudo sed -i "/\[M17 Network\]/{n;n;n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=-6/}" /etc/dmr2m17
+    up_servico restart
+    ;;
+
+([-][9])
+    echo "Ganho -9 dB"
+    sudo sed -i "/\[M17 Network\]/{n;n;n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=-9/}" /etc/dmr2m17
+    up_servico restart
+    ;;
+
+([-][1][2])
+    echo "Ganho -12 dB"
+    sudo sed -i "/\[M17 Network\]/{n;n;n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=-12/}" /etc/dmr2m17
+    up_servico restart
+    ;;
+
+([-][1][5])
+    echo "Ganho -15 dB"
+    sudo sed -i "/\[M17 Network\]/{n;n;n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=-15/}" /etc/dmr2m17
+    up_servico restart
+    ;;
+
+([-][1][8])
+    echo "M17 Ganho (maximo) -18 dB"
+    sudo sed -i "/\[M17 Network\]/{n;n;n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=-18/}" /etc/dmr2m17
+    up_servico restart
+    ;;
+
+
+ *)
+     echo "* ??? ${1}"
+     exit 1
+    ;;
+  esac
+fi
