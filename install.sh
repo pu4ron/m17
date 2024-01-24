@@ -331,11 +331,11 @@ if [ -f "${gatw}" ]; then
    if [[ $(grep -c "\[DMR Network 5\]" /etc/dmrgateway) -eq "1" ]]; then
       echo ""
       echo ""
-      echo "---  ATENCAO: Ja existe uma rede "DMR Network 5" no conf do DMRGateway -----"
+      echo "---  ATENCAO: Ja existe uma rede 'DMR Network 5' no arquivo de conf. do DMRGateway -----"
       echo ""
-      echo "Verifique se no arquivo config se a rede network 5 corresponde ao DMR2M17"
+      echo "Verifique no arquivo se a rede 'dmr network 5' corresponde ao DMR2M17 feita por este script"
       echo ""
-      echo "Caso nao, apague "DMR Network 5" do config DMRGateway e tente novamente"
+      echo "Caso nao, apague "DMR Network 5" das config. do DMRGateway e tente novamente"
       echo ""
       sleep 10
 
