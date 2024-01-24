@@ -226,6 +226,19 @@ else
 
  fi
 
+sleep 1
+mount -o remount,rw /
+if [ -f "/usr/local/sbin/volume" ]; then
+
+       sudo rm /usr/local/sbin/volume
+       sudo cp -p /opt/DMR2M17/volume /usr/local/sbin
+       sudo chmod 777 /usr/local/sbin/volume 
+
+else 
+       sudo cp -p /opt/DMR2M17/volume /usr/local/sbin
+       sudo chmod 777 /usr/local/sbin/volume 
+ fi
+
 echo ""
 echo ""
 echo "* Configurando os arquivos..."
