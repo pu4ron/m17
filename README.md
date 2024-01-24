@@ -1,5 +1,5 @@
 # m17
-Script de instalação do módulo cross-over DMR2M17 no PI-STAR.
+Script de instalação do módulo cross-over DMR2M17 / PI-STAR.
 
 
 * rpi-rw
