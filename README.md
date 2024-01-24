@@ -1,5 +1,6 @@
-# m17
-Script de instalação do módulo cross-over DMR2M17 / PI-STAR.
+# M17
+. Script de instalação do módulo cross-over DMR2M17 / PI-STAR.
+. ATENÇÂO: deve-se ativar o modo DMRGateway no pi-star para o devido funcionamento do Cross-over entre DMR e M17.
 
 
 * rpi-rw
@@ -8,3 +9,6 @@ Script de instalação do módulo cross-over DMR2M17 / PI-STAR.
 * sudo chmod +x install.sh
 * sudo chmod 777 install.sh
 * sudo ./install.sh
+
+* TX/RX: TG 17 / slot 2, porém estamos trabalhando com DMRGateway: 5000017 / slot 2
+* TG 5000017 / slot 2
