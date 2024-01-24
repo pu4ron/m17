@@ -12,6 +12,8 @@
 * sudo chmod +x install.sh
 * sudo chmod 777 install.sh
 * sudo ./install.sh
+  
+![m17](https://github.com/pu4ron/m17/assets/40077152/6d639365-8b4e-47a6-8b6d-4afbd051dc92)
 
 # TALKGROUP
 
