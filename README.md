@@ -1,8 +1,7 @@
 # m17
 Script de instalação do módulo cross-over DMR2M17 no PI-STAR.
 
-- Install DMR2M17 -
-  
+
 * rpi-rw
 * sudo git clone https://github.com/pu4ron/m17.git
 * cd m17
