@@ -1,6 +1,6 @@
 # SCRIPT M17
 
-* Script de instalação módulo cross-over DMR2M17 / PI-STAR.
+* Script de instalação do módulo cross-over DMR2M17 / PI-STAR.
 * ATENÇÃO: deve-se ativar o modo DMRGateway no pi-star para uso do Cross-over DMR/M17.
 
 # COMANDOS DE INSTALAÇÂO
