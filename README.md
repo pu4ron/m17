@@ -4,7 +4,7 @@
 * ATENÇÃO: deve-se ativar o modo DMRGateway para uso do Cross-over DMR/M17.
 * Suporte pi-star v4.1.7 e RPI 2/3/4(...)
 
-# COMANDOS DE INSTALAÇÂO
+# COMANDOS DE INSTALAÇÃO
 
 * rpi-rw
 * sudo git clone https://github.com/pu4ron/m17.git
