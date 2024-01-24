@@ -26,7 +26,7 @@
 ***Exemplo:***
 
 * -3 db (default)
-. sudo volume -3
+* sudo volume -3
  
 * +5 db
-. sudo volume +5
+* sudo volume +5
