@@ -21,7 +21,7 @@
 * TG 5000017 / slot 2
 
 # CONTROLE DE GANHO - SSH
-* O ganho é ajustado de três em três dB(s) - máximo 18 dB positivo e negativo.
+* O ajuste é feito de três em três dB(s) - máximo 18dB positivo e negativo.
 
 ***Exemplo:***
 
