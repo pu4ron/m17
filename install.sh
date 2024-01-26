@@ -102,10 +102,7 @@ sleep 3
 mount -o remount,rw /
 
 if [ -d "/opt/mbelib" ]; then                                          
-   # sudo rm -R /opt/mbelib
-   # sudo cp -p -R /home/pi-star/m17/mbelib /opt
-   # sudo chmod 777 /opt/mbelib
-   # cd /opt/mbelib
+
    sudo rm -R /opt/mbelib
    cd /opt
    sudo git clone https://github.com/szechyjs/mbelib.git
@@ -121,12 +118,7 @@ if [ -d "/opt/mbelib" ]; then
    sudo cp -f libmbe.so /usr/lib
    sudo cp -f libmbe.so.1 /usr/lib
    sudo cp -f libmbe.so.1.3 /usr/lib
-
-
 else
-   # sudo cp -p -R /home/pi-star/m17/mbelib /opt
-   # sudo chmod 777 /opt/mbelib
-   # cd /opt/mbelib
    cd /opt
    sudo git clone https://github.com/szechyjs/mbelib.git
    sudo chmod 777 mbelib
@@ -148,10 +140,6 @@ sleep 1
 mount -o remount,rw /
 if [ -f "/opt/md380_vocoder" ]; then 
                                          
-   # sudo rm -R /opt/md380_vocoder
-   # sudo cp -p -R /home/pi-star/m17/md380_vocoder /opt
-   # sudo chmod 777 /opt/md380_vocoder
-   # cd /opt/md380_vocoder
    sudo rm -R /opt/md380_vocoder
    cd /opt
    sudo git clone https://github.com/nostar/md380_vocoder.git
@@ -159,11 +147,7 @@ if [ -f "/opt/md380_vocoder" ]; then
    cd md380_vocoder
    sudo make
    sudo make install
-
 else
-   # sudo cp -p -R /home/pi-star/m17/md380_vocoder /opt
-   # sudo chmod 777 /opt/md380_vocoder
-   # cd /opt/md380_vocoder
    cd /opt
    sudo git clone https://github.com/nostar/md380_vocoder.git
    sudo chmod 777 md380_vocoder
@@ -176,10 +160,7 @@ else
 sleep 1
 mount -o remount,rw /
 if [ -d "/opt/imbe_vocoder" ]; then                                          
-   # sudo rm -R /opt/imbe_vocoder
-   # sudo cp -p -R /home/pi-star/m17/imbe_vocoder /opt
-   # sudo chmod 777 /opt/imbe_vocoder
-   # cd /opt/imbe_vocoder
+
    sudo rm -R /opt/imbe_vocoder
    cd /opt
    sudo git clone https://github.com/nostar/imbe_vocoder.git
@@ -188,11 +169,7 @@ if [ -d "/opt/imbe_vocoder" ]; then
    sudo make
    sudo make install
    sudo ldconfig
-
 else
-   # sudo cp -p -R /home/pi-star/m17/imbe_vocoder /opt
-   # sudo chmod 777 /opt/imbe_vocoder
-   # cd /opt/imbe_vocoder
    cd /opt
    sudo git clone https://github.com/nostar/imbe_vocoder.git
    sudo chmod 777 imbe_vocoder
@@ -212,7 +189,6 @@ if [ -d "/opt/DMR2M17" ]; then
    cd /opt/DMR2M17
    sudo make
    sudo cp DMR2M17 /usr/local/bin
-   # sudo cp DMR2M17.ini /etc/dmr2m17
    sudo chmod 777 /usr/local/bin/DMR2M17
 
 else
@@ -221,7 +197,6 @@ else
    cd /opt/DMR2M17
    sudo make
    sudo cp DMR2M17 /usr/local/bin
-   # sudo cp DMR2M17.ini /etc/dmr2m17
    sudo chmod 777 /usr/local/bin/DMR2M17
 
  fi
@@ -250,7 +225,7 @@ if [ -f "${dest}" ]; then
  sudo rm ${dest}
  fi
 
-touch ${dest}
+sudo touch ${dest}
 sudo chmod 777 ${dest}
 
 
@@ -260,7 +235,7 @@ echo "LocalPort=32010"                      >> ${dest}
 echo "DstName=M17-SLB A"                    >> ${dest}
 echo "DstAddress=165.73.249.152"            >> ${dest}
 echo "DstPort=17000"                        >> ${dest}
-echo "GainAdjustdB=-6"                      >> ${dest}
+echo "GainAdjustdB=-3"                      >> ${dest}
 echo "Daemon=1"                             >> ${dest}
 echo "Debug=0"                              >> ${dest}
 echo " "                                    >> ${dest}
@@ -296,7 +271,7 @@ if [ -f "${camsys}" ]; then
  sudo rm ${camsys}
  fi
 
-touch ${camsys}
+sudo touch ${camsys}
 sudo chmod 777 ${camsys}
 
 echo "[Unit]"                                                                   >> ${camsys}
@@ -363,7 +338,36 @@ if [ -f "${gatw}" ]; then
    fi
 fi
 
-mount -o remount,rw /
+sleep 1
+sudo mount -o remount,rw / 2>&1
+
+fw="/root/ipv4.fw"
+if [ -f "${fw}" ]; then
+    echo ""                                                       >> ${fw}
+    echo "iptables -A INPUT -p udp --dport 17000 -j ACCEPT"       >> ${fw}
+    echo "iptables -A FORWARD -p udp --dport 17000 -j ACCEPT"     >> ${fw}
+    echo "iptables -A OUTPUT -p udp --dport 17000 -j ACCEPT"      >> ${fw}
+    echo "iptables -A INPUT -p tcp --dport 17000 -j ACCEPT"       >> ${fw}
+    echo "iptables -A FORWARD -p tcp --dport 17000 -j ACCEPT"     >> ${fw}
+    echo "iptables -A OUTPUT -p tcp --dport 17000 -j ACCEPT"      >> ${fw}
+    echo "iptables -t mangle -A POSTROUTING -p udp --dport 17000 -j DSCP --set-dscp 46" >> ${fw}
+    echo "iptables -t mangle -A POSTROUTING -p tcp --dport 17000 -j DSCP --set-dscp 46" >> ${fw}
+else 
+    sudo touch ${fw}
+    sudo chmod 777 ${fw}
+    echo "iptables -A INPUT -p udp --dport 17000 -j ACCEPT"       >> ${fw}
+    echo "iptables -A FORWARD -p udp --dport 17000 -j ACCEPT"     >> ${fw}
+    echo "iptables -A OUTPUT -p udp --dport 17000 -j ACCEPT"      >> ${fw}
+    echo "iptables -A INPUT -p tcp --dport 17000 -j ACCEPT"       >> ${fw}
+    echo "iptables -A FORWARD -p tcp --dport 17000 -j ACCEPT"     >> ${fw}
+    echo "iptables -A OUTPUT -p tcp --dport 17000 -j ACCEPT"      >> ${fw}
+    echo "iptables -t mangle -A POSTROUTING -p udp --dport 17000 -j DSCP --set-dscp 46" >> ${fw}
+    echo "iptables -t mangle -A POSTROUTING -p tcp --dport 17000 -j DSCP --set-dscp 46" >> ${fw}
+    echo ""                                                       >> ${fw}
+fi
+sudo pistar-firewall > /dev/null 2>&1
+
+sudo mount -o remount,rw /
 echo ""
 echo ""
 echo "* Removendo os arquivos de instalacao..."
@@ -388,7 +392,7 @@ echo "*** FIM ***"
 echo ""
 echo ""
 echo -e "\033[01;37m\033[03;36m*** SUPER LINK BRASIL ***\033[00;37m"
-echo -e "\033[01;37m\033[03;36m https://superlink.py2lrz.com \033[00;37m"
+echo -e "\033[01;37m\033[03;36m http://ysf.superlink.qsl.br \033[00;37m"
 echo ""
 echo ""
 echo -e "\033[01;37m\033[03;36m*** DASHBOARD M17-SLB***\033[00;37m"
