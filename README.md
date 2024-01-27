@@ -16,9 +16,7 @@
 ![m17](https://github.com/pu4ron/m17/assets/40077152/6d639365-8b4e-47a6-8b6d-4afbd051dc92)
 
 # TALKGROUP
-
-* TG 17 / slot 2, porém estamos trabalhando com DMRGateway: 5000017 / slot 2
-* TG 5000017 / slot 2
+* TG 17 / slot 2
 
 # CONTROLE DE GANHO - SSH
 * O ajuste é feito de três em três dB(s) - máximo 18dB positivo e negativo.
@@ -30,3 +28,5 @@
  
 * +5 db
 * sudo volume +5
+
+* Após o ajuste de ganho aguarde de 3 a 4 segundos para TX.
