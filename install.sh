@@ -86,6 +86,8 @@ echo ""
 echo "* Desativando servicos..."
 echo ""
 service_handle stop
+sudo killall DMR2M17 > /dev/null 2>&1
+sudo killall DMR2M17 > /dev/null 2>&1
 sleep 3
 
 echo ""
