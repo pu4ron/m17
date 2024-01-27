@@ -243,7 +243,7 @@ echo "Debug=0"                              >> ${dest}
 echo " "                                    >> ${dest}
 echo "[DMR Network]"                        >> ${dest}
 echo "RptAddress=127.0.0.1"                 >> ${dest}
-echo "RptPort=62032"                        >> ${dest}
+echo "RptPort=62932"                        >> ${dest}
 echo "LocalAddress=127.0.0.4"               >> ${dest}
 echo "LocalPort=62037"                      >> ${dest}
 echo "Debug=0"                              >> ${dest}
@@ -328,14 +328,13 @@ if [ -f "${gatw}" ]; then
       echo "Id=${id}"                                 >> ${gatw}
       echo "Address=127.0.0.4"                        >> ${gatw}
       echo "Port=62037"                               >> ${gatw}
-      echo "Local=62032"                              >> ${gatw}
-      echo "TGRewrite0=1,5000017,1,17,1"              >> ${gatw}
-      echo "TGRewrite1=2,5000017,2,17,1"              >> ${gatw}
-      echo "PCRewrite0=1,5000017,1,17,1"              >> ${gatw}
-      echo "PCRewrite1=2,5000017,2,17,1"              >> ${gatw}
+      echo "Local=62932"                              >> ${gatw}
+      echo "TGRewrite0=2,17,2,17,1"                   >> ${gatw}
+      echo "SrcRewrite0=2,1,2,17,1"                   >> ${gatw}
+      echo "PCRewrite0=2,17,2,17,1"                   >> ${gatw}
       echo 'Password="PASSWORD"'                      >> ${gatw}
       echo "Location=1"                               >> ${gatw}
-      echo "Debug=1"                                  >> ${gatw}
+      echo "Debug=0"                                  >> ${gatw}
       echo ""                                         >> ${gatw}
 
       sudo chmod 644 ${gatw}      
