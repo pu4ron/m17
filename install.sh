@@ -235,7 +235,7 @@ echo "LocalPort=32510"                      >> ${dest}
 echo "DstName=M17-SLB A"                    >> ${dest}
 echo "DstAddress=165.73.249.152"            >> ${dest}
 echo "DstPort=17000"                        >> ${dest}
-echo "GainAdjustdB=-3"                      >> ${dest}
+echo "GainAdjustdB=-6"                      >> ${dest}
 echo "Daemon=0"                             >> ${dest}
 echo "Debug=0"                              >> ${dest}
 echo " "                                    >> ${dest}
