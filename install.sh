@@ -231,7 +231,7 @@ sudo chmod 777 ${dest}
 
 echo "[M17 Network]"                        >> ${dest}
 echo "Callsign=${call} D"                   >> ${dest}
-echo "LocalPort=32010"                      >> ${dest}
+echo "LocalPort=32510"                      >> ${dest}
 echo "DstName=M17-SLB A"                    >> ${dest}
 echo "DstAddress=165.73.249.152"            >> ${dest}
 echo "DstPort=17000"                        >> ${dest}
