@@ -233,7 +233,7 @@ sudo chmod 777 ${dest}
 
 echo "[M17 Network]"                        >> ${dest}
 echo "Callsign=${call} D"                   >> ${dest}
-echo "LocalPort=32510"                      >> ${dest}
+echo "LocalPort=32010"                      >> ${dest}
 echo "DstName=M17-SLB A"                    >> ${dest}
 echo "DstAddress=165.73.249.152"            >> ${dest}
 echo "DstPort=17000"                        >> ${dest}
@@ -243,9 +243,9 @@ echo "Debug=0"                              >> ${dest}
 echo " "                                    >> ${dest}
 echo "[DMR Network]"                        >> ${dest}
 echo "RptAddress=127.0.0.1"                 >> ${dest}
-echo "RptPort=62098"                        >> ${dest}
-echo "LocalAddress=127.0.0.1"               >> ${dest}
-echo "LocalPort=62099"                      >> ${dest}
+echo "RptPort=62032"                        >> ${dest}
+echo "LocalAddress=127.0.0.4"               >> ${dest}
+echo "LocalPort=62037"                      >> ${dest}
 echo "Debug=0"                              >> ${dest}
 echo " "                                    >> ${dest}
 echo "[DMR Id Lookup]"                      >> ${dest}
@@ -344,6 +344,22 @@ fi
 
 sleep 1
 sudo mount -o remount,rw / 2>&1
+
+
+hs="/root/DMR_Hosts.txt"
+if [ -f "${hs}" ]; then
+    sudo rm ${hs}
+    sudo touch ${hs}
+    sudo chmod 777 ${hs}
+    echo "DMR2M17				0000	127.0.0.4			none		62037"  >> ${hs}
+
+else
+    sudo touch ${hs}
+    sudo chmod 777 ${hs}
+    echo "DMR2M17				0000	127.0.0.4			none		62037"  >> ${hs}
+
+fi
+
 
 fw="/root/ipv4.fw"
 if [ -f "${fw}" ]; then
