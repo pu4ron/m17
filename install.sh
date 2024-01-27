@@ -305,24 +305,24 @@ if [ -f "${gatw}" ]; then
    sudo mount -o remount,rw / 2>&1
    sudo chmod 777 ${gatw}
 
-   if [[ $(grep -c "\[DMR Network 5\]" /etc/dmrgateway) -eq "1" ]]; then
+   if [[ $(grep -c "\[DMR Network 4\]" /etc/dmrgateway) -eq "1" ]]; then
       echo ""
       echo ""
-      echo "---  ATENCAO: Ja existe uma rede 'DMR Network 5' no arquivo de conf. do DMRGateway -----"
+      echo "---  ATENCAO: Ja existe uma rede 'DMR Network 4' no arquivo de conf. do DMRGateway -----"
       echo ""
-      echo "Verifique no arquivo se a rede 'dmr network 5' corresponde ao DMR2M17 feita por este script"
+      echo "Verifique no arquivo se a rede 'dmr network 4' corresponde ao DMR2M17 feita por este script"
       echo ""
-      echo "Caso nao, apague "DMR Network 5" das config. do DMRGateway e tente novamente"
+      echo "Caso nao, apague "DMR Network 4" das config. do DMRGateway e tente novamente"
       echo ""
       sleep 10
 
    fi
 
-   if [[ $(grep -c "\[DMR Network 5\]" /etc/dmrgateway) -eq "0" ]]; then
+   if [[ $(grep -c "\[DMR Network 4\]" /etc/dmrgateway) -eq "0" ]]; then
 	
       echo ""                                         >> ${gatw}
       echo ""                                         >> ${gatw}
-      echo "[DMR Network 5]"                          >> ${gatw}
+      echo "[DMR Network 4]"                          >> ${gatw}
       echo "Enabled=1"                                >> ${gatw}
       echo "Name=DMR2M17_Cross-over"                  >> ${gatw}
       echo "Id=${id}"                                 >> ${gatw}
