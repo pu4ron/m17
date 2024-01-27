@@ -29,4 +29,4 @@
 * +5 db
 * sudo volume +5
 
-* Após o ajuste de ganho aguarde de 3 a 4 segundos para TX.
+* Após o ajuste aguarde de 3 a 4 segundos para TX.
