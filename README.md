@@ -31,5 +31,5 @@
 
 * Após o ajuste aguarde de 3 a 4 segundos para TX.
 
-#  
+# LEIA-ME
 * Uma portadora curta (TX) para ativar o modo DMR2M17 (TX/RX).
