@@ -364,7 +364,9 @@ echo ""
 echo ""
 echo "Aguarde... "
 sudo pistar-update > /dev/null 2>&1
+sleep 3
 sudo mount -o remount,rw / 2>&1
+service_handle stop
 sleep 1
 
 fw="/root/ipv4.fw"
