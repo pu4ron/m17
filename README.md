@@ -30,3 +30,6 @@
 * sudo volume +5
 
 * Após o ajuste aguarde de 3 a 4 segundos para TX.
+
+# INFO: 
+* Uma portadora curta (TX) para ativar o modo DMR2M17 (TX/RX).
