@@ -326,16 +326,16 @@ if [ -f "${gatw}" ]; then
       echo "Enabled=1"                                >> ${gatw}
       echo "Name=DMR2M17_Cross-over"                  >> ${gatw}
       echo "Id=${id}"                                 >> ${gatw}
-      echo "Address=127.0.0.1"                        >> ${gatw}
-      echo "Port=62099"                               >> ${gatw}
-      echo "Local=62098"                              >> ${gatw}
+      echo "Address=127.0.0.4"                        >> ${gatw}
+      echo "Port=62037"                               >> ${gatw}
+      echo "Local=62032"                              >> ${gatw}
       echo "TGRewrite0=1,5000017,1,17,1"              >> ${gatw}
       echo "TGRewrite1=2,5000017,2,17,1"              >> ${gatw}
       echo "PCRewrite0=1,5000017,1,17,1"              >> ${gatw}
       echo "PCRewrite1=2,5000017,2,17,1"              >> ${gatw}
       echo 'Password="PASSWORD"'                      >> ${gatw}
-      echo "Location=0"                               >> ${gatw}
-      echo "Debug=0"                                  >> ${gatw}
+      echo "Location=1"                               >> ${gatw}
+      echo "Debug=1"                                  >> ${gatw}
       echo ""                                         >> ${gatw}
 
       sudo chmod 644 ${gatw}      
