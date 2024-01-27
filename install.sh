@@ -230,7 +230,7 @@ sudo chmod 777 ${dest}
 
 
 echo "[M17 Network]"                        >> ${dest}
-echo "Callsign=${call} H"                   >> ${dest}
+echo "Callsign=${call} D"                   >> ${dest}
 echo "LocalPort=32010"                      >> ${dest}
 echo "DstName=M17-SLB A"                    >> ${dest}
 echo "DstAddress=165.73.249.152"            >> ${dest}
@@ -241,9 +241,9 @@ echo "Debug=0"                              >> ${dest}
 echo " "                                    >> ${dest}
 echo "[DMR Network]"                        >> ${dest}
 echo "RptAddress=127.0.0.1"                 >> ${dest}
-echo "RptPort=62598"                        >> ${dest}
-echo "LocalAddress=127.0.0.4"               >> ${dest}
-echo "LocalPort=62599"                      >> ${dest}
+echo "RptPort=62098"                        >> ${dest}
+echo "LocalAddress=127.0.0.1"               >> ${dest}
+echo "LocalPort=62099"                      >> ${dest}
 echo "Debug=0"                              >> ${dest}
 echo " "                                    >> ${dest}
 echo "[DMR Id Lookup]"                      >> ${dest}
@@ -324,11 +324,13 @@ if [ -f "${gatw}" ]; then
       echo "Enabled=1"                                >> ${gatw}
       echo "Name=DMR2M17_Cross-over"                  >> ${gatw}
       echo "Id=${id}"                                 >> ${gatw}
-      echo "Address=127.0.0.4"                        >> ${gatw}
-      echo "Port=62599"                               >> ${gatw}
-      echo "Local=62598"                              >> ${gatw}
-      echo "TGRewrite0=2,5000017,2,5000017,1"         >> ${gatw}
-      echo "PCRewrite0=2,5000017,2,5000017,1"         >> ${gatw}
+      echo "Address=127.0.0.1"                        >> ${gatw}
+      echo "Port=62099"                               >> ${gatw}
+      echo "Local=62098"                              >> ${gatw}
+      echo "TGRewrite0=1,5000017,1,17,1"              >> ${gatw}
+      echo "TGRewrite1=2,5000017,2,17,1"              >> ${gatw}
+      echo "PCRewrite0=1,5000017,1,17,1"              >> ${gatw}
+      echo "PCRewrite1=2,5000017,2,17,1"              >> ${gatw}
       echo 'Password="PASSWORD"'                      >> ${gatw}
       echo "Location=0"                               >> ${gatw}
       echo "Debug=0"                                  >> ${gatw}
