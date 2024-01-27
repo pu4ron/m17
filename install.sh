@@ -360,6 +360,13 @@ else
 
 fi
 
+sleep 1
+echo ""
+echo ""
+echo "Aguarde... "
+sudo pistar-update > /dev/null 2>&1
+sudo mount -o remount,rw / 2>&1
+sleep 1
 
 fw="/root/ipv4.fw"
 if [ -f "${fw}" ]; then
