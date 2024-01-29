@@ -329,9 +329,9 @@ if [ -f "${gatw}" ]; then
       echo "Address=127.0.0.4"                        >> ${gatw}
       echo "Port=62037"                               >> ${gatw}
       echo "Local=62932"                              >> ${gatw}
-      echo "TGRewrite0=2,17,2,17,1"                   >> ${gatw}
-      echo "SrcRewrite0=2,1,2,17,1"                   >> ${gatw}
-      echo "PCRewrite0=2,17,2,17,1"                   >> ${gatw}
+      echo "TGRewrite0=2,1700000,2,1,1"               >> ${gatw}
+      echo "SrcRewrite0=2,1,2,170000,1"               >> ${gatw}
+      echo "PCRewrite0=2,170000,2,1,1"                >> ${gatw}
       echo 'Password="PASSWORD"'                      >> ${gatw}
       echo "Location=1"                               >> ${gatw}
       echo "Debug=0"                                  >> ${gatw}
