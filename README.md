@@ -25,7 +25,7 @@
 * TG 1700000 / slot 2
 
 # CONTROLE DE GANHO - SSH
-* O ajuste é feito em dB(s) - máximo 18dB positivo e negativo.
+* O ajuste é feito em dB(s) - máximo 18dB negativo e positivo.
 
 ***Exemplo:***
 
