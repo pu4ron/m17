@@ -188,7 +188,7 @@ sleep 1
 mount -o remount,rw /
 if [ -d "/opt/DMR2M17" ]; then                                          
    sudo rm -R /opt/DMR2M17
-   sudo cp -p -R /home/pi-star/m17/DMR2M17 /opt
+   sudo cp -p -R /home/pi-star/m17/MMDVM /opt/DMR2M17
    sudo chmod 777 /opt/DMR2M17
    cd /opt/DMR2M17
    sudo make
@@ -196,7 +196,7 @@ if [ -d "/opt/DMR2M17" ]; then
    sudo chmod 777 /usr/local/bin/DMR2M17
 
 else
-   sudo cp -p -R /home/pi-star/m17/DMR2M17 /opt
+   sudo cp -p -R /home/pi-star/m17/MMDVM /opt/DMR2M17
    sudo chmod 777 /opt/DMR2M17
    cd /opt/DMR2M17
    sudo make
