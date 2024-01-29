@@ -46,3 +46,5 @@
 
 # LEIA-ME
 * Uma portadora curta (TX) para ativar o modo DMR2M17 (TX/RX).
+
+* Runualdo - PU4RON
