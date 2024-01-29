@@ -188,16 +188,18 @@ sleep 1
 mount -o remount,rw /
 if [ -d "/opt/DMR2M17" ]; then                                          
    sudo rm -R /opt/DMR2M17
+   sudo chmod 777 -R /home/pi-star/m17/MMDVM
    sudo cp -p -R /home/pi-star/m17/MMDVM /opt/DMR2M17
-   sudo chmod 777 /opt/DMR2M17
+   sudo chmod 777 -R /opt/DMR2M17
    cd /opt/DMR2M17
    sudo make
    sudo cp DMR2M17 /usr/local/bin
    sudo chmod 777 /usr/local/bin/DMR2M17
 
 else
+   sudo chmod 777 -R /home/pi-star/m17/MMDVM
    sudo cp -p -R /home/pi-star/m17/MMDVM /opt/DMR2M17
-   sudo chmod 777 /opt/DMR2M17
+   sudo chmod 777 -R /opt/DMR2M17
    cd /opt/DMR2M17
    sudo make
    sudo cp DMR2M17 /usr/local/bin
@@ -237,7 +239,7 @@ echo "[M17 Network]"                        >> ${dest}
 echo "DstAddress=127.0.0.1"                 >> ${dest}
 echo "LocalPort=17511"                      >> ${dest}
 echo "DstPort=17510"                        >> ${dest}
-echo "GainAdjustdB=-6"                      >> ${dest}
+echo "GainAdjustdB=-3"                      >> ${dest}
 echo "Daemon=0"                             >> ${dest}
 echo "Debug=0"                              >> ${dest}
 echo " "                                    >> ${dest}
@@ -426,7 +428,7 @@ echo ""
 echo "*** FIM ***"
 echo ""
 echo ""
-echo -e "\033[01;37m\033[03;36m *** TX/RX: TG 17 / Slot 2 / CC 1 *** \033[00;37m"
+echo -e "\033[01;37m\033[03;36m *** TX/RX: TG 1700000 / Slot 2 / CC 1 *** \033[00;37m"
 echo ""
 echo -e "\033[01;37m\033[03;36m *** Uma portadora curta (TX) para ativar o modo DMR2M17 (TX/RX) *** \033[00;37m"
 echo ""
