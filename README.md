@@ -17,6 +17,10 @@
   
 ![m17](https://github.com/pu4ron/m17/assets/40077152/6d639365-8b4e-47a6-8b6d-4afbd051dc92)
 
+# Rádio
+* Evite distorções diminuindo o ganho de audio do seu equipamento.
+* Um valor recomendado para quem usa o firmware opengd é 0 a -3db.
+  
 # TALKGROUP
 * TG 1700000 / slot 2
 
