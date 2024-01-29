@@ -78,6 +78,8 @@ service_handle() {
 	sudo systemctl ${doWhat} mmdvmhost.service > /dev/null 2>&1 && sleep 2 > /dev/null 2>&1
 	sudo systemctl ${doWhat} dmr2m17.service > /dev/null 2>&1
 	sudo systemctl ${doWhat} dmrgateway.service > /dev/null 2>&1
+ 	sudo systemctl ${doWhat} m17gateway.service > /dev/null 2>&1
+
 
 }
 
@@ -232,11 +234,9 @@ sudo chmod 777 ${dest}
 
 
 echo "[M17 Network]"                        >> ${dest}
-echo "Callsign=${call} D"                   >> ${dest}
-echo "LocalPort=32010"                      >> ${dest}
-echo "DstName=M17-SLB A"                    >> ${dest}
-echo "DstAddress=165.73.249.152"            >> ${dest}
-echo "DstPort=17000"                        >> ${dest}
+echo "DstAddress=127.0.0.1"                 >> ${dest}
+echo "LocalPort=17511"                      >> ${dest}
+echo "DstPort=17510"                        >> ${dest}
 echo "GainAdjustdB=-6"                      >> ${dest}
 echo "Daemon=0"                             >> ${dest}
 echo "Debug=0"                              >> ${dest}
