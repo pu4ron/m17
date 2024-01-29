@@ -16,6 +16,7 @@ up_servico() {
 	
 	doWhat=${1}
 	sudo systemctl ${doWhat} dmr2m17.service > /dev/null 2>&1
+        sudo systemctl ${doWhat} m17gateway.service > /dev/null 2>&1
 	# sudo systemctl ${doWhat} dmrgateway.service > /dev/null 2>&1
 }
 
@@ -30,110 +31,371 @@ if [ "$1" ]; then
 
 ([+][1][8] | [1][8])
     sudo killall DMR2M17 > /dev/null 2>&1
+    echo ""
     echo "M17 Ganho (maximo) +18 dB"
-    echo "aguarde 3 segundos para TX..."
+    echo "aguarde 5 segundos para TX..."
+    echo ""
     sudo sed -i "/\[M17 Network\]/{n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=18/}" /etc/dmr2m17
     up_servico restart
     ;;
 
+([+][1][7] | [1][7])
+    sudo killall DMR2M17 > /dev/null 2>&1
+    echo ""
+    echo "Ganho +17 dB"
+    echo "aguarde 5 segundos para TX..."
+    echo ""
+    sudo sed -i "/\[M17 Network\]/{n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=17/}" /etc/dmr2m17
+    up_servico restart
+    ;;
+
+([+][1][6] | [1][6])
+    sudo killall DMR2M17 > /dev/null 2>&1
+    echo ""
+    echo "Ganho +16 dB"
+    echo "aguarde 5 segundos para TX..."
+    echo ""
+    sudo sed -i "/\[M17 Network\]/{n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=16/}" /etc/dmr2m17
+    up_servico restart
+    ;;
 
 ([+][1][5] | [1][5])
     sudo killall DMR2M17 > /dev/null 2>&1
+    echo ""
     echo "Ganho +15 dB"
-    echo "aguarde 3 segundos para TX..."
+    echo "aguarde 5 segundos para TX..."
+    echo ""
     sudo sed -i "/\[M17 Network\]/{n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=15/}" /etc/dmr2m17
     up_servico restart
     ;;
 
+([+][1][4] | [1][4])
+    sudo killall DMR2M17 > /dev/null 2>&1
+    echo ""
+    echo "Ganho (maximo) +14 dB"
+    echo "aguarde 5 segundos para TX..."
+    echo ""
+    sudo sed -i "/\[M17 Network\]/{n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=14/}" /etc/dmr2m17
+    up_servico restart
+    ;;
+
+([+][1][3] | [1][3])
+    sudo killall DMR2M17 > /dev/null 2>&1
+    echo ""
+    echo "Ganho +13 dB"
+    echo "aguarde 5 segundos para TX..."
+    echo ""
+    sudo sed -i "/\[M17 Network\]/{n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=13/}" /etc/dmr2m17
+    up_servico restart
+    ;;
 
 ([+][1][2] | [1][2])
     sudo killall DMR2M17 > /dev/null 2>&1
+    echo ""
     echo "Ganho +12 dB"
-    echo "aguarde 3 segundos para TX..."
+    echo "aguarde 5 segundos para TX..."
+    echo ""
     sudo sed -i "/\[M17 Network\]/{n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=12/}" /etc/dmr2m17
     up_servico restart
     ;;
 
+([+][1][1] | [1][1])
+    sudo killall DMR2M17 > /dev/null 2>&1
+    echo ""
+    echo "Ganho +11 dB"
+    echo "aguarde 5 segundos para TX..."
+    echo ""
+    sudo sed -i "/\[M17 Network\]/{n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=11/}" /etc/dmr2m17
+    up_servico restart
+    ;;
+
+([+][1][0] | [1][0])
+    sudo killall DMR2M17 > /dev/null 2>&1
+    echo ""
+    echo "Ganho +10 dB"
+    echo "aguarde 5 segundos para TX..."
+    echo ""
+    sudo sed -i "/\[M17 Network\]/{n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=10/}" /etc/dmr2m17
+    up_servico restart
+    ;;
 
 ([+][9] | [9])
     sudo killall DMR2M17 > /dev/null 2>&1
+    echo ""
     echo "Ganho +9 dB"
-    echo "aguarde 3 segundos para TX..."
+    echo "aguarde 5 segundos para TX..."
+    echo ""
     sudo sed -i "/\[M17 Network\]/{n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=9/}" /etc/dmr2m17
     up_servico restart
     ;;
 
+([+][8] | [8])
+    sudo killall DMR2M17 > /dev/null 2>&1
+    echo ""
+    echo "Ganho +8 dB"
+    echo "aguarde 5 segundos para TX..."
+    echo ""
+    sudo sed -i "/\[M17 Network\]/{n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=8/}" /etc/dmr2m17
+    up_servico restart
+    ;;
+
+([+][7] | [7])
+    sudo killall DMR2M17 > /dev/null 2>&1
+    echo ""
+    echo "Ganho +7 dB"
+    echo "aguarde 5 segundos para TX..."
+    echo ""
+    sudo sed -i "/\[M17 Network\]/{n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=7/}" /etc/dmr2m17
+    up_servico restart
+    ;;
 
 ([+][6] | [6])
     sudo killall DMR2M17 > /dev/null 2>&1
+    echo ""
     echo "Ganho +6 dB"
-    echo "aguarde 3 segundos para TX..."
+    echo "aguarde 5 segundos para TX..."
+    echo ""
     sudo sed -i "/\[M17 Network\]/{n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=6/}" /etc/dmr2m17
     up_servico restart
     ;;
 
 
+([+][5] | [5])
+    sudo killall DMR2M17 > /dev/null 2>&1
+    echo ""
+    echo "Ganho +5 dB"
+    echo "aguarde 5 segundos para TX..."
+    echo ""
+    sudo sed -i "/\[M17 Network\]/{n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=5/}" /etc/dmr2m17
+    up_servico restart
+    ;;
+
+([+][4] | [4])
+    sudo killall DMR2M17 > /dev/null 2>&1
+    echo ""
+    echo "Ganho +4 dB"
+    echo "aguarde 5 segundos para TX..."
+    echo ""
+    sudo sed -i "/\[M17 Network\]/{n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=4/}" /etc/dmr2m17
+    up_servico restart
+    ;;
+
 ([+][3] | [3])
     sudo killall DMR2M17 > /dev/null 2>&1
+    echo ""
     echo "Ganho +3 dB"
-    echo "aguarde 3 segundos para TX..."
+    echo "aguarde 5 segundos para TX..."
+    echo ""
     sudo sed -i "/\[M17 Network\]/{n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=3/}" /etc/dmr2m17
     up_servico restart
     ;;
 
+([+][2] | [2])
+    sudo killall DMR2M17 > /dev/null 2>&1
+    echo ""
+    echo "Ganho +2 dB"
+    echo "aguarde 5 segundos para TX..."
+    echo ""
+    sudo sed -i "/\[M17 Network\]/{n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=2/}" /etc/dmr2m17
+    up_servico restart
+    ;;
+
+([+][1] | [1])
+    sudo killall DMR2M17 > /dev/null 2>&1
+    echo ""
+    echo "Ganho +1 dB"
+    echo "aguarde 5 segundos para TX..."
+    echo ""
+    sudo sed -i "/\[M17 Network\]/{n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=1/}" /etc/dmr2m17
+    up_servico restart
+    ;;
 
 ([0])
     sudo killall DMR2M17 > /dev/null 2>&1
+    echo ""
     echo "Ganho 0 dB"
-    echo "aguarde 3 segundos para TX..."
+    echo "aguarde 5 segundos para TX..."
+    echo ""
     sudo sed -i "/\[M17 Network\]/{n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=0/}" /etc/dmr2m17
+    up_servico restart
+    ;;
+
+([-][1])
+    sudo killall DMR2M17 > /dev/null 2>&1
+    echo ""
+    echo "Ganho -1 dB"
+    echo "aguarde 5 segundos para TX..."
+    echo ""
+    sudo sed -i "/\[M17 Network\]/{n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=-1/}" /etc/dmr2m17
+    up_servico restart
+    ;;
+
+([-][2])
+    sudo killall DMR2M17 > /dev/null 2>&1
+    echo ""
+    echo "Ganho -2 dB"
+    echo "aguarde 5 segundos para TX..."
+    echo ""
+    sudo sed -i "/\[M17 Network\]/{n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=-2/}" /etc/dmr2m17
     up_servico restart
     ;;
 
 ([-][3])
     sudo killall DMR2M17 > /dev/null 2>&1
+    echo ""
     echo "Ganho -3 dB"
-    echo "aguarde 3 segundos para TX..."
+    echo "aguarde 5 segundos para TX..."
+    echo ""
     sudo sed -i "/\[M17 Network\]/{n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=-3/}" /etc/dmr2m17
+    up_servico restart
+    ;;
+
+([-][4])
+    sudo killall DMR2M17 > /dev/null 2>&1
+    echo ""
+    echo "Ganho -4 dB"
+    echo "aguarde 5 segundos para TX..."
+    echo ""
+    sudo sed -i "/\[M17 Network\]/{n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=-4/}" /etc/dmr2m17
+    up_servico restart
+    ;;
+
+([-][5])
+    sudo killall DMR2M17 > /dev/null 2>&1
+    echo ""
+    echo "Ganho -5 dB"
+    echo "aguarde 5 segundos para TX..."
+    echo ""
+    sudo sed -i "/\[M17 Network\]/{n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=-5/}" /etc/dmr2m17
     up_servico restart
     ;;
 
 ([-][6])
     sudo killall DMR2M17 > /dev/null 2>&1
+    echo ""
     echo "Ganho -6 dB"
-    echo "aguarde 3 segundos para TX..."
+    echo "aguarde 5 segundos para TX..."
+    echo ""
     sudo sed -i "/\[M17 Network\]/{n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=-6/}" /etc/dmr2m17
+    up_servico restart
+    ;;
+
+([-][7])
+    sudo killall DMR2M17 > /dev/null 2>&1
+    echo ""
+    echo "Ganho -7 dB"
+    echo "aguarde 5 segundos para TX..."
+    echo ""
+    sudo sed -i "/\[M17 Network\]/{n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=-7/}" /etc/dmr2m17
+    up_servico restart
+    ;;
+
+([-][8])
+    sudo killall DMR2M17 > /dev/null 2>&1
+    echo ""
+    echo "Ganho -8 dB"
+    echo "aguarde 5 segundos para TX..."
+    echo ""
+    sudo sed -i "/\[M17 Network\]/{n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=-8/}" /etc/dmr2m17
     up_servico restart
     ;;
 
 ([-][9])
     sudo killall DMR2M17 > /dev/null 2>&1
+    echo ""
     echo "Ganho -9 dB"
-    echo "aguarde 3 segundos para TX..."
+    echo "aguarde 5 segundos para TX..."
+    echo ""
     sudo sed -i "/\[M17 Network\]/{n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=-9/}" /etc/dmr2m17
+    up_servico restart
+    ;;
+
+([-][1][0])
+    sudo killall DMR2M17 > /dev/null 2>&1
+    echo ""
+    echo "Ganho -10 dB"
+    echo "aguarde 5 segundos para TX..."
+    echo ""
+    sudo sed -i "/\[M17 Network\]/{n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=-10/}" /etc/dmr2m17
+    up_servico restart
+    ;;
+
+([-][1][1])
+    sudo killall DMR2M17 > /dev/null 2>&1
+    echo ""
+    echo "Ganho -11 dB"
+    echo "aguarde 5 segundos para TX..."
+    echo ""
+    sudo sed -i "/\[M17 Network\]/{n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=-11/}" /etc/dmr2m17
     up_servico restart
     ;;
 
 ([-][1][2])
     sudo killall DMR2M17 > /dev/null 2>&1
+    echo ""
     echo "Ganho -12 dB"
-    echo "aguarde 3 segundos para TX..."
+    echo "aguarde 5 segundos para TX..."
+    echo ""
     sudo sed -i "/\[M17 Network\]/{n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=-12/}" /etc/dmr2m17
+    up_servico restart
+    ;;
+
+([-][1][3])
+    sudo killall DMR2M17 > /dev/null 2>&1
+    echo ""
+    echo "Ganho -13 dB"
+    echo "aguarde 5 segundos para TX..."
+    echo ""
+    sudo sed -i "/\[M17 Network\]/{n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=-13/}" /etc/dmr2m17
+    up_servico restart
+    ;;
+
+([-][1][4])
+    sudo killall DMR2M17 > /dev/null 2>&1
+    echo ""
+    echo "Ganho -14 dB"
+    echo "aguarde 5 segundos para TX..."
+    echo ""
+    sudo sed -i "/\[M17 Network\]/{n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=-14/}" /etc/dmr2m17
     up_servico restart
     ;;
 
 ([-][1][5])
     sudo killall DMR2M17 > /dev/null 2>&1
+    echo ""
     echo "Ganho -15 dB"
-    echo "aguarde 3 segundos para TX..."
+    echo "aguarde 5 segundos para TX..."
+    echo ""
     sudo sed -i "/\[M17 Network\]/{n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=-15/}" /etc/dmr2m17
+    up_servico restart
+    ;;
+
+([-][1][6])
+    sudo killall DMR2M17 > /dev/null 2>&1
+    echo ""
+    echo "Ganho -16 dB"
+    echo "aguarde 5 segundos para TX..."
+    echo ""
+    sudo sed -i "/\[M17 Network\]/{n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=-16/}" /etc/dmr2m17
+    up_servico restart
+    ;;
+
+([-][1][7])
+    sudo killall DMR2M17 > /dev/null 2>&1
+    echo ""
+    echo "Ganho -17 dB"
+    echo "aguarde 5 segundos para TX..."
+    echo ""
+    sudo sed -i "/\[M17 Network\]/{n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=-17/}" /etc/dmr2m17
     up_servico restart
     ;;
 
 ([-][1][8])
     sudo killall DMR2M17 > /dev/null 2>&1
+    echo ""
     echo "M17 Ganho (maximo) -18 dB"
-    echo "aguarde 3 segundos para TX..."
+    echo "aguarde 5 segundos para TX..."
+    echo ""
     sudo sed -i "/\[M17 Network\]/{n;n;n;n;s/GainAdjustdB=${valorATUAL}/GainAdjustdB=-18/}" /etc/dmr2m17
     up_servico restart
     ;;
