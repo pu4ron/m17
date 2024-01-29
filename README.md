@@ -14,7 +14,10 @@
 * sudo chmod +x install.sh
 * sudo chmod 777 install.sh
 * sudo ./install.sh
-  
+![m1](https://github.com/pu4ron/m17/assets/40077152/2dfd7eb1-3ab8-411f-bd27-ae36a806a0e0)
+
+![m2](https://github.com/pu4ron/m17/assets/40077152/a9c23b51-4c87-4392-9b8d-0f31dc3d6052)
+
 ![m17](https://github.com/pu4ron/m17/assets/40077152/6d639365-8b4e-47a6-8b6d-4afbd051dc92)
 
 # Rádio
