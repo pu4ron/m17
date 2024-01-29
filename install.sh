@@ -395,8 +395,11 @@ else
 fi
 sudo pistar-firewall > /dev/null 2>&1
 
+sleep 1
 sudo mount -o remount,rw /
 
+sudo chmod 777 /opt/DMR2M17/gateway.sh
+sudo chmod +x /opt/DMR2M17/gateway.sh
 sudo /opt/DMR2M17/gateway.sh
 
 sudo mount -o remount,rw /
