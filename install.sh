@@ -27,7 +27,7 @@ echo -e "\033[01;37m*                                      *\033[00;37m"
 echo -e "\033[01;37m****************************************\033[00;37m"
 echo ""
 echo ""
-sleep 1
+sleep 2
 clear
 echo -e "\033[01;37m****************************************\033[00;37m"
 echo -e "\033[01;37m*                                      *\033[00;37m"
@@ -40,7 +40,7 @@ echo ""
 echo ""
 echo -e "\033[01;37m\033[03;36m*** Versao minima para uso: pi-star v4.1.7/RPI ***\033[00;37m"
 echo ""
-echo -e "\033[01;37m\033[03;36m*** Obs: Cross-mode M17 trabalha em conjunto com DMRGateway, ative nas config do seu pi-star ***\033[00;37m"
+echo -e "\033[01;37m\033[03;36m*** Cross-mode M17 trabalha com DMRGateway, ative nas config do seu pi-star ***\033[00;37m"
 echo ""
 echo ""
 echo ""
