@@ -324,7 +324,7 @@ if [ -f "${gatw}" ]; then
       echo ""                                         >> ${gatw}
       echo "[DMR Network 4]"                          >> ${gatw}
       echo "Enabled=1"                                >> ${gatw}
-      echo "Name=DMR2M17_Cross-over"                  >> ${gatw}
+      echo "Name=DMR2M17_[M17-SLB A]"                 >> ${gatw}
       echo "Id=${id}"                                 >> ${gatw}
       echo "Address=127.0.0.4"                        >> ${gatw}
       echo "Port=62037"                               >> ${gatw}
@@ -333,7 +333,7 @@ if [ -f "${gatw}" ]; then
       echo "SrcRewrite0=2,1,2,170000,1"               >> ${gatw}
       echo "PCRewrite0=2,170000,2,1,1"                >> ${gatw}
       echo 'Password="PASSWORD"'                      >> ${gatw}
-      echo "Location=1"                               >> ${gatw}
+      echo "Location=0"                               >> ${gatw}
       echo "Debug=0"                                  >> ${gatw}
       echo ""                                         >> ${gatw}
 
@@ -394,6 +394,10 @@ else
     echo ""                                                       >> ${fw}
 fi
 sudo pistar-firewall > /dev/null 2>&1
+
+sudo mount -o remount,rw /
+
+sudo /opt/DMR2M17/gateway.sh
 
 sudo mount -o remount,rw /
 echo ""
